@@ -1,7 +1,13 @@
 'use client'
+import dynamic from 'next/dynamic';
+
+const Modal = dynamic(() => import('@mui/material/Modal'), { ssr: false });
+const TextField = dynamic(() => import('@mui/material/TextField'), { ssr: false });
+const Button = dynamic(() => import('@mui/material/Button'), { ssr: false });
+
 import Image from 'next/image';
 import {useState, useEffect} from 'react'
-import { Box, Modal, Typography, Stack, TextField, Button } from '@mui/material'
+import { Box, Typography, Stack } from '@mui/material'
 import { firestore } from '@/firebase'
 import {collection, deleteDoc, doc, getDocs, query, getDoc, setDoc} from 'firebase/firestore'
 
